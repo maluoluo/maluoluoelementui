@@ -1,11 +1,7 @@
 <template>
   <div>
     <div class="app-side-logo">
-      <img
-        src="@/assets/logo.png"
-        :width="collapse ? '60' : '60'"
-        height="60"
-      />
+      <img src="@/assets/logo.png" :width="collapse ? '60' : '60'" height="60" />
     </div>
 
     <el-menu
@@ -28,7 +24,7 @@
 <script>
 import SidebarItem from "./SidebarItem";
 export default {
-  naem: "Sidebar",
+  name: "Sidebar",
   components: {
     SidebarItem,
   },

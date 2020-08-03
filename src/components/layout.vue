@@ -27,15 +27,12 @@
             </template>
           </el-menu>
         </div>
-      </el-aside> -->
+      </el-aside>-->
       <el-aside
         class="app-side app-side-left"
         :class="isCollapse ? 'app-side-collapsed' : 'app-side-expanded'"
       >
-        <Sidebar
-          :collapse="isCollapse"
-          :routes="$router.options.routes[1].children"
-        />
+        <Sidebar :collapse="isCollapse" :routes="$router.options.routes[1].children" />
       </el-aside>
       <el-container>
         <el-header class="app-header">
@@ -54,7 +51,8 @@
             <el-menu-item index="/">首页</el-menu-item>
             <el-menu-item index="/Echarts">图标</el-menu-item>
             <el-menu-item index="/article">文章</el-menu-item>
-          </el-menu> -->
+          </el-menu>-->
+          <main-tags></main-tags>
 
           <div class="app-header-userinfo">
             <el-dropdown trigger="hover" :hide-on-click="false">
@@ -62,17 +60,17 @@
                 {{ username }}
                 <i class="el-icon-caret-bottom el-icon--right"></i>
               </span>
+
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>我的消息</el-dropdown-item>
                 <el-dropdown-item>设置</el-dropdown-item>
-                <el-dropdown-item divided @click.native="logout"
-                  >退出登录</el-dropdown-item
-                >
+                <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
           </div>
         </el-header>
-        <main-tags></main-tags>
+
+        <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
         <el-main class="app-body">
           <template>
             <router-view />
@@ -86,11 +84,13 @@
 <script>
 import MainTags from "@/components/Tags";
 import Sidebar from "@/components/Sidebar";
+import Breadcrumb from "@/components/Breadcrumb";
 export default {
   name: "Container",
   components: {
     Sidebar,
-    MainTags
+    MainTags,
+    Breadcrumb,
   },
   data() {
     return {

@@ -14,7 +14,7 @@ export default new Router({
     {
       path: "/",
       redirect: "/login",
-      name: "login",
+      // name: "login",
       component: () => import("../components/layout.vue"),
       children: [{
           path: "homepage",
