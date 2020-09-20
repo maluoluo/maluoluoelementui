@@ -1,5 +1,6 @@
 <template>
   <!-- text -->
+  <!-- ma-test -->
   <div id="app">
     <router-view />
   </div>
